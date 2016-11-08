@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto:300,400,700&amp;subset=cyrillic" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="css/mini.css" rel="stylesheet">
     <title>Тест-драйв массажного кресла</title>
   </head>
   <body>
@@ -28,26 +28,26 @@
         </nav>
         <div class="call-me">
           <div>+7 (961) 270-57-71</div>
-          <div class="btn">Позвоните мне</div>
+          <div class="btn btn-call-me">Позвоните мне</div>
         </div>
       </div>
     </header>
     <main class="container">
       <div class="promo clearfix">
         <div class="bg"></div>
-        <img src="img/promo.png" width="625" height="626" alt="">
+        <img src="img/promo.png" width="431" height="680" alt="">
         <div class="promo-text">
           <p>
-            МЫ ПРИВЕЗЕМ
-            МАССАЖНОЕ КРЕСЛО
-            <b>К ВАМ ДОМОЙ НА 5 ДНЕЙ</b>
+            МЫ ПРИВЕЗЕМ<br>
+            МАССАЖНОЕ КРЕСЛО<br>
+            <b>К ВАМ ДОМОЙ НА 5 ДНЕЙ</b><br>
             <span>БЕСПЛАТНО</span>
           </p>
           <a href="#instruction">УЗНАЙТЕ КАК</a>
         </div>
       </div>
       <div class="instruction clearfix">
-        <a name="instruction"></a>
+        <a id="instruction"></a>
         <h1>КАК ПРОЙТИ ТЕСТ-ДРАЙВ?</h1>
         <div class="box">
           <div class="box-bg"></div>
@@ -81,7 +81,7 @@
           в превосходном качестве массажных кресел<br>
           US Medica и Yamaguchi.
         </p>
-        <form class="form-order" action="#" method="post">
+        <form class="form-order" action="php/send.php" method="post">
           <div>
             <label for="name">Имя:</label>
             <input type="text" name="name" id="name" required>
@@ -91,8 +91,8 @@
             <input type="email" name="email" id="email">
           </div>
           <div>
-            <label for="telephone">Телефон:</label>
-            <input type="tel" name="telephone" id="telephone" required>
+            <label for="tel">Телефон:</label>
+            <input type="tel" name="tel" id="tel" required>
           </div>
           <div>
             <button class="btn" type="submit">Отправить</button>
@@ -133,16 +133,25 @@
     <footer class="footer-main">
       <div class="container clearfix">
         <div class="info">
-          <span>ИП Колесник А.В.</span>
-          <span>ИНН 250803477768</span>
-          <span>ОГРНИП 308263516100053</span>
+          <span>ООО Массаж 26.ру </span>
+          <span>ИНН 2634806965 </span>
+          <span>ОГРН 1122651027355</span>
         </div>
         <div class="number">
-          <span>+7 (918) 884-25-25</span>
+          <span>+7 (961) 270-57-71</span>
         </div>
       </div>
     </footer>
-
-    <!--<script src=""></script>-->
+    <div class="modal-content clearfix">
+      <button class="modal-content-close" type="button" title="Закрыть">Закрыть</button>
+      <h2 class="modal-content-title">Мы обязательно вам перезвоним!</h2>
+      <form class="modal-content-form" action="php/call-me.php" method="post">
+        <input type="text" name="name" placeholder="Как вас зовут?" required>
+        <input type="tel"  name="tel" placeholder="Ваш номер телефона?" required>
+        <button class="btn" type="submit">Отправить</button>
+      </form>
+    </div>
+    <div class="modal-overlay"></div>
+    <script src="js/script.js"></script>
   </body>
 </html>
